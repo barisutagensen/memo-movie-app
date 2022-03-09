@@ -1,24 +1,28 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column                 | Type    | Options     |
+| -----------------------| ------- | ----------- |
+| nickname               | string  | null: false |
+| email                  | string  | null: false |
+| encrypted_password     | string  | null: false |
+| genre_id               | integer | null: false |
 
-* Ruby version
+### Association
+- has_many :movies
 
-* System dependencies
+## moviesテーブル
 
-* Configuration
+| Column        | Type       | Options                        |
+| --------------| -----------| ------------------------------ |
+| title         | string     | null: false                    |
+| memo          | text       | null: false                    |
+| actor         | string     | null: false                    |
+| director      | string     | null: false                    |
+| genre_id      | integer    | null: false                    |
+| evaluation_id | integer    | null: false                    |
+| user          | references | null: false, foreign_key: true |
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user
