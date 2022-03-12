@@ -7,7 +7,7 @@
 | nickname               | string  | null: false |
 | email                  | string  | null: false |
 | encrypted_password     | string  | null: false |
-| genre_id               | integer | null: false |
+<!-- | genre_id               | integer | null: false | -->
 
 ### Association
 - has_many :movies
