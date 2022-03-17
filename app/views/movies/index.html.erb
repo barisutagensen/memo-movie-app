@@ -1,12 +1,13 @@
-<div class="contents row">
+<h1>映画一覧</h1>
+<div class="contents">
   <% @movies.each do |movie| %>
     <div class="content_post" style="background-image: url(<%= movie.image %>);">
       <p class="title"><%= movie.title %></p>
-      <div class="genre_id">
-        <%= movie.genre_id %>
+      <div class="movie-genre">
+        <%= movie.genre.name %>
       </div>
-      <div class="evaluation_id">
-        <%= movie.genre_id %>
+      <div class="movie-evaluation">
+        <%= movie.evaluation.name %>
       </div>
     </div>
   <% end %>
