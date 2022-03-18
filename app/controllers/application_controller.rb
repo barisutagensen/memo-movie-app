@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth
+  # deviseに関するコントローラーの処理の際に実行
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
