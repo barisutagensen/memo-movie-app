@@ -1,7 +1,9 @@
 <h1>映画一覧</h1>
-<div class="contents">
+<div class="container">
+  <div class="row">
   <% @movies.each do |movie| %>
-    <div class="content_post" style="background-image: url(<%= movie.image %>);">
+    <div class="col-sm-6 col-lg-4">
+      <div class="content_post" style="background-image: url(<%= movie.image %>);"></div>
       <p class="title"><%= movie.title %></p>
       <div class="movie-genre">
         <%= movie.genre.name %>
@@ -10,7 +12,6 @@
         <%= movie.evaluation.name %>
       </div>
     </div>
+  </div>
   <% end %>
 </div>
-<%= link_to "仮のボタンです", "#", class: "btn btn-primary" %>
-        
