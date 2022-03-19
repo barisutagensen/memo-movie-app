@@ -3,7 +3,7 @@
   <div class="row">
   <% @movies.each do |movie| %>
     <div class="col-sm-6 col-lg-4">
-      <div class="content_post" style="background-image: url(<%= movie.image %>);"></div>
+      <%= image_tag movie.image, class: 'movie-image' %>
       <p class="title"><%= movie.title %></p>
       <div class="movie-genre">
         <%= movie.genre.name %>
