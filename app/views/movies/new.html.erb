@@ -1,38 +1,40 @@
-<%# <div class="container">
-  <div class="row justify-content-center">
-    <h1 class="font-wight-normal mt-3">映画メモ</h1> 
-  </div> %>
-  <%# <div class="row justify-content-center"> %>
-    <%= form_with model: @movies, local: true do |f| %>
-      <div class="form-group">
-        <%= f.label :タイトル %>
-        <%= f.text_field :title, placeholder: "映画タイトル" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :映画ビジュアル %>
-        <%= f.file_field :image %>
-      </div>
-      <div class="form-group">
-        <%= f.label :メモ %>
-        <%= f.text_field :memo, placeholder: "メモ", class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :俳優名 %>
-        <%= f.text_field :actor, placeholder: "俳優名", class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :監督名 %>
-        <%= f.text_field :director, placeholder: "監督名", class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :ジャンル %>
-        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select"}) %>
-      </div>
-      <div class="form-group">
-        <%= f.label :星評価 %>
-        <%= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"select"}) %>
-      </div>
-      <%= f.submit "登録" class: "btn btn-success" %>
-    <% end %> 
-  <%# </div>
-</div %>
+<div class="cover-new">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h1 class="font-weight-normal mt-3">映画メモ</h1>
+    </div>
+    <div class="row justify-content-center">
+      <%= form_with model: @movies, local:true do |f| %>
+        <div class="form-group">
+          <%= f.label :title, "タイトル" %>
+          <%= f.text_field :title, placeholder: "映画タイトル", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :image, "映画ビジュアル" %><br>
+          <%= f.file_field :image %>
+        </div>
+        <div class="form-group">
+          <%= f.label :memo, "メモ" %>
+          <%= f.text_field :memo, placeholder: "メモ", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :actor, "俳優" %>
+          <%= f.text_field :actor, placeholder: "俳優名", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :director, "監督" %>
+          <%= f.text_field :director, placeholder: "監督名", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :genre_id, "ジャンル" %>
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"form-control"}) %>
+        </div>
+        <div class="form-group">
+          <%= f.label :evaluation_id, "星評価" %>
+          <%= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"form-control"}) %>
+        </div>
+        <%= f.submit 'メモる', class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

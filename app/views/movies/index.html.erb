@@ -1,17 +1,28 @@
-<h1>映画一覧</h1>
-<div class="container">
-  <div class="row">
-  <% @movies.each do |movie| %>
-    <div class="col-sm-6 col-lg-4">
-      <%= image_tag movie.image, class: 'movie-image' %>
-      <p class="title"><%= movie.title %></p>
-      <div class="movie-genre">
-        <%= movie.genre.name %>
-      </div>
-      <div class="movie-evaluation">
-        <%= movie.evaluation.name %>
-      </div>
+<div class="cover-index">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h1 class="font-weight-normal mt-3">映画メモ一覧</h1>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+      <% @movies.each do |movie| %>
+        <div class="col">
+        <%# カード %>
+          <div class="card shadow h-100">
+            <%= image_tag movie.image, class: 'movie-image' %>
+            <ul class="list-group list-group-flush">
+              <p class="text-center text-primary">タイトル</p>
+              <li class="list-group-item text-center"><%= movie.title %></li>
+              <p class="text-center text-primary">ジャンル</p>
+              <li class="list-group-item text-center"><%= movie.genre.name %></li>
+              <p class="text-center text-primary">星評価</p>
+              <li class="list-group-item text-center"><%= movie.evaluation.name %></li>
+            </ul>
+            <div class="card-body text-center">
+              <%= link_to "詳細", movie_path(movie.id), method: :get, class: "btn btn-primary" %>
+          </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-  <% end %>
 </div>
