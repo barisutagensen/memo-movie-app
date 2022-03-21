@@ -6,5 +6,5 @@ class User < ApplicationRecord
   #  moviesテーブルとのアソシエーション
   has_many :movies
 
-  validates :nickname, presence: true, uniqueness: true
+  validates :nickname, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 10 }
 end
