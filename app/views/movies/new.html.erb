@@ -4,7 +4,8 @@
       <h1 class="font-weight-normal mt-3">映画メモ</h1>
     </div>
     <div class="row justify-content-center">
-      <%= form_with model: @movies, local:true do |f| %>
+      <%= form_with model: @movie, local:true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
         <div class="form-group">
           <%= f.label :title, "タイトル" %>
           <%= f.text_field :title, placeholder: "映画タイトル", class: "form-control" %>
