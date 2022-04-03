@@ -8,6 +8,9 @@ Memo Movie メモムービー
 
 # ER図
 
+![image](https://user-images.githubusercontent.com/95076051/161419697-31d23553-b1f0-47ca-8193-daf4a36e6e68.png)
+
+
 
 # テーブル設計
 
