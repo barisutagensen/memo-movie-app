@@ -1,25 +1,46 @@
-<div class="cover-show">
-  <div class="container">
-    <div class="row justify-content-center">
-      <h1 class="font-weight-normal mt-5 mb-5">映画メモ</h1>
-    </div>
-    <div class="row justify-content-center d-block">
-      <p class="caption"><%= @movie.user.nickname %></p>
-      <%= image_tag @movie.image, class: "img-fluid" %><br>
-      <p class="caption"><%= @movie.title %></p>
-      <h4>メモ</h4>
-      <p id="text"><%= @movie.memo %></p>
-      <h4>俳優</h4>
-      <p id="text"><%= @movie.actor %></p>
-      <h4>監督</h4>
-      <p id="text"><%= @movie.director %></p>
-      <h4>ジャンル</h4>
-      <p id="text"><%= @movie.genre.name %></p>
-      <h4>評価</h4>
-      <p id="text"><%= @movie.evaluation.name %></p>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <h1 class="col-3 align-self-center">映画メモ</h1>
+  </div>
+  <div class="row justify-content-center m-5">
+    <h2 class="col-3 align-self-center"><%= @movie.title %></h2>
+  </div>
+  <div class="row justify-content-center">
+    <%= image_tag @movie.image.variant(resize: '500x300'), class: "img-thumbnail m-5", style: "width:100%;height:auto;max-width:500px;" %><br>
+  </div>
+  <div class="row justify-content-center m-5">
+    <h2 class="col-3 align-self-center"><%= @movie.memo %></h2>
+  </div>
+ <table class="table table-striped">
+  <%# <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">First</th>
+    </tr>
+  </thead> %>
+    <tbody>
+      <tr>
+        <th scope="row">出演俳優</th>
+        <td><%= @movie.actor %></td>
+        <%# <td>Otto</td>
+        <td>@mdo</td> %>
+      </tr>
+      <tr>
+        <th scope="row">監督名</th>
+        <td><%= @movie.director %></td>
+      </tr>
+      <tr>
+        <th scope="row">ジャンル</th>
+        <td colspan="2"><%= @movie.genre.name %></td>
+      </tr>
+      <tr>
+        <th scope="row">オススメ度（★５段階評価）</th>
+        <td colspan="2"><%= @movie.evaluation.name %></td>
+      </tr>
+    </tbody>
+  </table>
       <%= link_to '編集する', edit_movie_path(@movie.id), class: "btn btn-info mr-3" %>
       <%= link_to '削除する', movie_path(@movie.id), method: :delete, "data-confirm"=>"本当に消しますか？", class: "btn btn-danger" %><br>
       <%= link_to '投稿一覧ページへ', root_path, class: "btn btn-dark mt-3" %>
-    </div>
-  </div>
+    
 </div>
