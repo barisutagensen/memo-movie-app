@@ -1,60 +1,39 @@
  <!-- コンテンツ -->
-  <!-- ホーム -->
-  <section class="bg-danger text-white" id="home" style="padding: 80px 0 50px">
-    <div class="container py-3">
-      <div class="row align-items-center g-4">
-
-        <!-- 左側 -->
-        <div class="col-md-5">
-          <h1>映画情報メモしよう。</h1>
-          <p>観た映画を思い出すきっかけになります。</p>
-          <%# <a href="#contactUs" class="btn btn-dark px-5 shadow">
-            メモる
-          </a> %>
-        </div>
-
-        <!-- 右側 -->
-        <%# <div class="col-md-5 text-center">
-                 <img src="images/undraw_content_team_3epn.png" class="img-fluid"
-            alt="Content team">
-        </div> %>
-
-      </div>
-    </div>
-  </section>
-
- <!--　講座内容  -->
-  <section class="py-5" id="content">
-    <div class="container py-3">
+    <div class="container mb-5 py-3">
       <div class="row text-center pb-3">
         <div class="col">
           <h2>映画メモ一覧</h2>
         </div>
       </div>
-      <div class="row row-cols-1 row-cols-md-3 g-3">
-        <% @movies.each do |movie| %>
-          <!-- プログラミング基礎 -->
-          <div class="col">
-            <!-- カード -->
-            <div class="card shadow h-100">
-              <%= image_tag movie.image.variant(resize: '500x300'), class: 'movie-image' %>
-              <div class="card-body">
-                <ul class="list-group list-group-flush">
-                  <p class="text-center text-primary">タイトル</p>
-                  <li class="list-group-item text-center"><%= movie.title %></li>
-                  <p class="text-center text-primary">ジャンル</p>
-                  <li class="list-group-item text-center"><%= movie.genre.name %></li>
-                  <p class="text-center text-primary">星評価</p>
-                  <li class="list-group-item text-center"><%= movie.evaluation.name %></li>
-                </ul>
-                <div class="card-body text-center">
-                    <%= link_to "詳細", movie_path(movie.id), method: :get, class: "btn btn-primary" %>
+      <div class="container">
+        <div class="row">
+            <% @movies.each do |movie| %>
+              <div class="card m-5" style="max-width: 540px;">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <%= image_tag movie.image.variant(resize: '500x300'), class: 'movie-image' %>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                          <p class="text-center text-primary">タイトル</p>
+                          <li class="list-group-item text-center"><%= movie.title %></li>
+                          <p class="text-center text-primary">ジャンル</p>
+                          <li class="list-group-item text-center"><%= movie.genre.name %></li>
+                          <p class="text-center text-primary">星評価</p>
+                          <li class="list-group-item text-center"><%= movie.evaluation.name %></li>
+                        </ul>
+                        <div class="card-body text-center">
+                            <%= link_to "詳細", movie_path(movie.id), method: :get, class: "btn btn-primary" %>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
+            <% end %>
+        </div>
+      </div>
 
       </div>
     </div>
-  </section>
