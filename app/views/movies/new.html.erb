@@ -1,6 +1,6 @@
 <div class="cover-new">
   <div class="container">
-      <div class="row text-center">
+      <div class="row m-4">
         <div class="col">
           <h1>映画メモ</h1>
         </div>
@@ -33,7 +33,7 @@
             <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"form-control"}) %>
           </div>
           <div class="form-group">
-            <%= f.label :evaluation_id, "星評価" %>
+            <%= f.label :evaluation_id, "個人的評価" %>
             <%= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"form-control"}) %>
           </div>
           <%= f.submit 'メモる', class: "btn btn-success rounded-pill px-5" %>
