@@ -17,6 +17,14 @@
             <%= f.file_field :image %>
           </div>
           <div class="form-group">
+            <%= f.label :quote_source, "映画ビジュアル引用元URL" %>
+            <%= f.text_field :quote_source, placeholder: "URL", class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :excerpt_site_name, "引用元サイト名" %>
+            <%= f.text_field :excerpt_site_name, placeholder: "サイト名", class: "form-control" %>
+          </div>
+          <div class="form-group">
             <%= f.label :memo, "メモ" %>
             <%= f.text_field :memo, placeholder: "メモ", class: "form-control" %>
           </div>

@@ -11,6 +11,7 @@
             <div class="row">
               <div class="col-md-6">
                 <%= image_tag movie.image.variant(resize: '500x300'), class: 'movie-image' %>
+                <p class="m-3">引用:  <%= link_to movie.excerpt_site_name, movie.quote_source %></p>
               </div>
               <div class="col-md-6">
                 <div class="card-body">

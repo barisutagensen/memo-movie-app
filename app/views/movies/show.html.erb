@@ -1,12 +1,15 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
-    <h1 class="col-3 align-self-center">映画メモ</h1>
+    <h1 class="col-3 align-self-center">映画メモ詳細</h1>
   </div>
   <div class="row justify-content-center m-5">
-    <h2 class="col-3 align-self-center"><%= @movie.title %></h2>
+    <h2 class="col-5 text-center"><%= @movie.title %></h2>
   </div>
   <div class="row justify-content-center">
     <%= image_tag @movie.image.variant(resize: '500x300'), class: "img-thumbnail m-5", style: "width:100%;height:auto;max-width:500px;" %><br>
+  </div>
+  <div class="row justify-content-center">
+    <p class="col-3 align-self-center">引用:  <%= link_to @movie.excerpt_site_name, @movie.quote_source %></p>
   </div>
   <div class="row justify-content-center m-3">
     <h4 class="col align-self-center"><%= @movie.memo %></h4>
