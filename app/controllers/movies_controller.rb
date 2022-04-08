@@ -1,9 +1,10 @@
 class MoviesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
-    @movies = Movie.all
+    @movies = Movie.includes(:user)
   end
   
   def new
@@ -40,7 +41,11 @@ class MoviesController < ApplicationController
 
   private
   def movie_params
-    params.require(:movie).permit(:title, :image, :memo, :actor, :director, :genre_id, :evaluation_id).merge(user_id: current_user.id)
+    params.require(:movie).permit(:title, :image, :memo, :actor, :director, :genre_id, :evaluation_id, :quote_source, :excerpt_site_name).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless @movie.user_id == current_user.id
   end
 
   def set_movie
