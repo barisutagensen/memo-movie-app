@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <% @movies.each do |movie| %>
+          <div class="card m-5" style="max-width: 540px;">
+              <div class="row">
+                <div class="col-md-6">
+                  <%= image_tag movie.image.variant(resize: '500x300'), class: 'movie-image' %>
+                  <p class="m-3">引用:  <%= link_to movie.excerpt_site_name, movie.quote_source %></p>
+                </div>
+                <div class="col-md-6">
+                  <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                      <p class="text-center text-dark bg-light">タイトル</p>
+                      <li class="list-group-item text-center"><%= movie.title %></li>
+                      <p class="text-center text-dark bg-light">ジャンル</p>
+                      <li class="list-group-item text-center"><%= movie.genre.name %></li>
+                      <p class="text-center text-dark bg-light">個人的評価</p>
+                      <li class="list-group-item text-center"><%= movie.evaluation.name %></li>
+                      <li class="list-group-item text-center"><%=link_to "by #{movie.user.nickname}", user_path(movie.user.id), method: :get%></li>
+                    </ul>
+                    <div class="card-body text-center">
+                        <%= link_to "詳細", movie_path(movie.id), method: :get, class: "btn btn-primary" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
