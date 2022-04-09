@@ -39,6 +39,10 @@ class MoviesController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @movies = Movie.search(params[:keyword])
+  end
+
   private
   def movie_params
     params.require(:movie).permit(:title, :image, :memo, :actor, :director, :genre_id, :evaluation_id, :quote_source, :excerpt_site_name).merge(user_id: current_user.id)

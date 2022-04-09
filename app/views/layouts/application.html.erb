@@ -25,6 +25,10 @@
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
               <% if user_signed_in? %>
+                <%= form_with(url: search_movies_path, local: true, method: :get, class: "d-flex") do |form|%>
+                  <%= form.text_field :keyword, placeholder: "タイトルを検索する", class: "form-control me-2" %>
+                  <%= form.submit "検索", class: "btn btn-outline-success"%>
+                <% end %>
                 <ul class="navbar-nav ms-auto">
                   <%# <li class="">
                     <%= current_user.nickname%>
@@ -41,6 +45,10 @@
                 </ul>
                 </div>
               <% else %>
+                   <%= form_with(url: search_movies_path, local: true, method: :get, class: "d-flex") do |form|%>
+                      <%= form.text_field :keyword, placeholder: "タイトルを検索する", class: "form-control me-2" %>
+                      <%= form.submit "検索", class: "btn btn-outline-success"%>
+                   <% end %>
                   <ul class="navbar-nav">
                     <li class="nav-item"> 
                       <%= link_to "ログイン", new_user_session_path, class:"nav-link" %>
