@@ -14,6 +14,8 @@ class Movie < ApplicationRecord
   with_options presence: true do
     validates :title
     validates :image
+    validates :quote_source
+    validates :excerpt_site_name
     validates :memo
     validates :actor
     validates :director
@@ -26,5 +28,13 @@ class Movie < ApplicationRecord
   with_options numericality: { other_than: 1 , message: "can't be blank"} do
     validates :genre_id
     validates :evaluation_id
+  end
+
+  def self.search(search)
+    if search != ""
+      Movie.where('title LIKE(?)', "%#{search}%")
+    else
+      Movie.all
+    end
   end
 end
