@@ -34,7 +34,7 @@ class Movie < ApplicationRecord
     if search != ""
       Movie.where('title LIKE(?)', "%#{search}%")
     else
-      Movie.all
+      Movie.includes(:user)
     end
   end
 end
