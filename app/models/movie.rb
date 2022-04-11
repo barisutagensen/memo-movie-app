@@ -19,6 +19,7 @@ class Movie < ApplicationRecord
     validates :memo
     validates :actor
     validates :director
+    validates :viewing_timing
     validates :genre_id
     validates :evaluation_id
     validates :user_id

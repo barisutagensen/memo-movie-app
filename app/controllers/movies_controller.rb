@@ -45,7 +45,7 @@ class MoviesController < ApplicationController
 
   private
   def movie_params
-    params.require(:movie).permit(:title, :image, :memo, :actor, :director, :genre_id, :evaluation_id, :quote_source, :excerpt_site_name).merge(user_id: current_user.id)
+    params.require(:movie).permit(:title, :image, :memo, :actor, :director, :viewing_timing, :genre_id, :evaluation_id, :quote_source, :excerpt_site_name).merge(user_id: current_user.id)
   end
 
   def move_to_index

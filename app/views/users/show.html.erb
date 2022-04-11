@@ -1,9 +1,6 @@
 <div class="container">
-  <%# <div class="row">
-    <h2><%= @nickname %>
-  <%# </div> %>
   <div class="row m-5">
-    <h2><%= @user.nickname %>さんの映画記録<h2>
+    <h2><%= @user.nickname %>さんの映画鑑賞記録<h2>
   </div>
   <div class="row">
       <% @movies.each do |movie| %>
@@ -18,8 +15,8 @@
                   <ul class="list-group list-group-flush">
                     <p class="text-center text-dark bg-light">タイトル</p>
                     <li class="list-group-item text-center"><%= movie.title %></li>
-                    <p class="text-center text-dark bg-light">ジャンル</p>
-                    <li class="list-group-item text-center"><%= movie.genre.name %></li>
+                    <%# <p class="text-center text-dark bg-light">ジャンル</p>
+                    <li class="list-group-item text-center"><%= movie.genre.name %>
                     <p class="text-center text-dark bg-light">個人的評価</p>
                     <li class="list-group-item text-center"><%= movie.evaluation.name %></li>
                   </ul>

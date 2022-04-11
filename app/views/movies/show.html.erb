@@ -1,7 +1,4 @@
 <div class="container mt-5">
-  <div class="row justify-content-center">
-    <h1 class="col-3 align-self-center">映画メモ詳細</h1>
-  </div>
   <div class="row justify-content-center m-5">
     <h2 class="col-5 text-center"><%= @movie.title %></h2>
   </div>
@@ -31,6 +28,10 @@
       <tr>
         <th scope="row">監督名</th>
         <td><%= @movie.director %></td>
+      </tr>
+      <tr>
+        <th scope="row">鑑賞した時期</th>
+        <td colspan="2"><%= @movie.viewing_timing %></td>
       </tr>
       <tr>
         <th scope="row">ジャンル</th>

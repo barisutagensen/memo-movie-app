@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_08_131027) do
+ActiveRecord::Schema.define(version: 2022_04_11_130137) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2022_04_08_131027) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "quote_source", null: false
     t.string "excerpt_site_name", null: false
+    t.string "viewing_timing", null: false
     t.index ["user_id"], name: "index_movies_on_user_id"
   end
 
