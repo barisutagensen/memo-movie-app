@@ -26,13 +26,13 @@ class Movie < ApplicationRecord
   end
 
   # ジャンルの選択が「--」のときは保存できない
-  with_options numericality: { other_than: 1 , message: "can't be blank"} do
+  with_options numericality: { other_than: 1, message: "can't be blank" } do
     validates :genre_id
     validates :evaluation_id
   end
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Movie.where('title LIKE(?)', "%#{search}%")
     else
       Movie.includes(:user)
