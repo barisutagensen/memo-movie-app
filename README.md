@@ -8,6 +8,7 @@ Memo Movie メモムービー
 
 # URL
 
+Herokuによるデプロイ
 https://memo-movie-app.herokuapp.com/
 
 
@@ -21,20 +22,15 @@ https://memo-movie-app.herokuapp.com/
 * Email: sample@sample.com
 * パスワード: sample
 
-
-
-
-
-
 # ER図
 
 ![image](https://user-images.githubusercontent.com/95076051/163506659-ebfde0c8-4680-49ee-85d3-7718520b476f.png)
 
 # アプリケーションを作成した背景
 
-映画鑑賞を趣味としている人の課題です。
-友人との会話の中でオススメの映画は何と聞かれることがあったが、パッと勧めたい映画が思い出せないことがあった。
-アプリの中に映画情報を記録として残しておくことで、思い出すきっかけになると考えました。
+過去に観た映画を思い出せないという課題。 <br>
+友人と映画の話をしていた時、オススメの映画は何？と聞かれました。そんな時パッと勧めたい映画を思い出せない事がありました。 <br>
+アプリの中に観た映画を記録として残しておき、それを見返す事で思い出すきっかけになると考えました。
 
 # 洗い出した要件
 
@@ -74,6 +70,13 @@ https://docs.google.com/spreadsheets/d/1EYzpcuWZLgwcPeUVKsMA89DoCMAVjGHamVgUvnjk
 ### Association
 - belongs_to :user
 
+#### ActiveHash
+- belongs_to :genre
+- belongs_to :evaluation
+
+#### active_storage
+- has_one_attached :image
+
 # 画面遷移図
 
 ![image](https://user-images.githubusercontent.com/95076051/163512584-18e2d0cc-733c-4146-8553-3337e0aadfc0.png)
@@ -83,4 +86,6 @@ https://docs.google.com/spreadsheets/d/1EYzpcuWZLgwcPeUVKsMA89DoCMAVjGHamVgUvnjk
 * ruby 2.6.5
 * Rails 6.0.0
 * MySQL 5.6.51
-
+* VScode
+* heroku
+* AWS S3
