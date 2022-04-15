@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
-    @movies = Movie.includes(:user)
+    @movies = Movie.includes(:user).order("created_at DESC").page(params[:page]).per(6)
   end
   
   def new
