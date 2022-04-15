@@ -4,9 +4,9 @@ class MoviesController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
-    @movies = Movie.includes(:user).order("created_at DESC").page(params[:page]).per(6)
+    @movies = Movie.includes(:user).order('created_at DESC').page(params[:page]).per(6)
   end
-  
+
   def new
     @movie = Movie.new
   end
@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     if @movie.save
-       redirect_to root_path
+      redirect_to root_path
     else
       render :new
     end
@@ -44,8 +44,10 @@ class MoviesController < ApplicationController
   end
 
   private
+
   def movie_params
-    params.require(:movie).permit(:title, :image, :memo, :actor, :director, :viewing_timing, :genre_id, :evaluation_id, :quote_source, :excerpt_site_name).merge(user_id: current_user.id)
+    params.require(:movie).permit(:title, :image, :memo, :actor, :director, :viewing_timing, :genre_id, :evaluation_id,
+                                  :quote_source, :excerpt_site_name).merge(user_id: current_user.id)
   end
 
   def move_to_index
@@ -55,5 +57,4 @@ class MoviesController < ApplicationController
   def set_movie
     @movie = Movie.find(params[:id])
   end
-  
 end
