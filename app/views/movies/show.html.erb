@@ -41,6 +41,10 @@
         <th scope="row">個人的評価（★５段階評価）</th>
         <td colspan="2"><%= @movie.evaluation.name %></td>
       </tr>
+      <tr>
+        <th scope="row">メモした人</th>
+        <td colspan="2"><%=link_to "by #{@movie.user.nickname}", user_path(@movie.user.id), method: :get%></td>
+      </tr>
     </tbody>
   </table>
   <% if user_signed_in? && current_user.id == @movie.user_id %>
