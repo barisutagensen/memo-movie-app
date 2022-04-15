@@ -4,11 +4,11 @@ Memo Movie メモムービー
 
 # アプリケーションの概要
 
-過去に観た映画情報を記録、共有するアプリケーションです。ユーザー登録をすると映画情報を投稿記録できるようになります。
+過去に観た映画情報をメモ、共有するアプリケーションです。ユーザー登録をすると映画情報を投稿（メモ）できるようになります。
 
 # URL
 
-Herokuによるデプロイ
+Herokuによるデプロイ <br>
 https://memo-movie-app.herokuapp.com/
 
 
@@ -21,6 +21,41 @@ https://memo-movie-app.herokuapp.com/
 * アカウント名: sample
 * Email: sample@sample.com
 * パスワード: sample
+
+# 実装機能
+## トップページ　
+
+![image](https://user-images.githubusercontent.com/95076051/163571170-589d6cb9-944f-4c1b-8bef-f5ee21490406.png)
+
+
+## ユーザー登録機能
+
+ユーザー登録をすることで映画情報を投稿（メモ）できます。
+![ユーザー認証](https://user-images.githubusercontent.com/95076051/163569027-232eb313-d965-4e5b-8946-3a1599e480ab.gif)
+
+
+## 映画情報投稿（メモ）機能
+
+映画情報（タイトル、イメージ、イメージ引用元URL、引用元サイト名、メモ、出演俳優、監督、観た時期、ジャンル、個人的評価）を入力する事で投稿（メモ）できます。
+![映画記録](https://user-images.githubusercontent.com/95076051/163569557-c5fe9074-4b7b-4fcf-9342-95031b62f9c7.gif)
+
+## 映画メモの詳細機能
+
+詳細ボタンを押すと映画メモの詳細が表示されます。
+![映画詳細](https://user-images.githubusercontent.com/95076051/163570102-b53e1178-dff1-4a68-abbb-264d7107296f.gif)
+
+
+## 映画メモの編集機能
+
+詳細ページにある編集ボタン（投稿したユーザーのみ表示される）を押すと編集ページに遷移します。<br>
+編集ページのフォームには投稿（メモ）時の情報が表示されます。
+![映画メモ編集](https://user-images.githubusercontent.com/95076051/163570637-ffa096ff-9a06-4a4b-8917-738fc60022e4.gif)
+
+## 映画メモの削除機能
+
+詳細ページにある削除ボタン（メモしたユーザーのみ表示される）を押すと映画メモを削除できます。<br>
+(削除ボタンを押すと削除確認のアラートが表示されます)
+![映画メモ削除](https://user-images.githubusercontent.com/95076051/163570964-272efdf0-113e-47df-a27d-3e68c46f21d0.gif)
 
 # ER図
 
