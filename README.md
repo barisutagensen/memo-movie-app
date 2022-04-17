@@ -31,7 +31,7 @@ https://memo-movie-app.herokuapp.com/
 ## ユーザー登録機能
 
 ユーザー登録をすることで映画情報を投稿（メモ）できます。
-![ユーザー認証](https://user-images.githubusercontent.com/95076051/163569027-232eb313-d965-4e5b-8946-3a1599e480ab.gif)
+![5a9f1c6047259b1288f87a6c696e23ff](https://user-images.githubusercontent.com/95076051/163719922-c5678ba6-9b16-4380-9038-e8f2659b139e.gif)
 
 
 ## 映画情報投稿（メモ）機能
