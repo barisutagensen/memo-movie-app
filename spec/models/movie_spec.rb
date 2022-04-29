@@ -25,6 +25,18 @@ RSpec.describe Movie, type: :model do
         expect(@movie.errors.full_messages).to include("Image can't be blank")
       end
 
+      it 'quote_sourceが空では保存できない' do
+        @movie.quote_source = ''
+        @movie.valid?
+        expect(@movie.errors.full_messages).to include("Quote source can't be blank")
+      end
+
+      it 'excerpt_site_nameが空では保存できない' do
+        @movie.excerpt_site_name = ''
+        @movie.valid?
+        expect(@movie.errors.full_messages).to include("Excerpt site name can't be blank")
+      end
+
       it 'memoが空では保存できない' do
         @movie.memo = ''
         @movie.valid?
@@ -41,6 +53,12 @@ RSpec.describe Movie, type: :model do
         @movie.director = ''
         @movie.valid?
         expect(@movie.errors.full_messages).to include("Director can't be blank")
+      end
+
+      it 'viewing_timingが空では保存できない' do
+        @movie.viewing_timing = ''
+        @movie.valid?
+        expect(@movie.errors.full_messages).to include("Viewing timing can't be blank")
       end
 
       it 'genre_idが空では保存できない' do
